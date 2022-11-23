@@ -26,5 +26,19 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok:1.18.20')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') // JPA
+    implementation('com.h2database:h2:') // JPA
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    annotationProcessor('org.projectlombok:lombok')
+    implementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
